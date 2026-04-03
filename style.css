@@ -161,7 +161,7 @@ a:hover {
   margin: 0 auto;
   padding: var(--space-sm) var(--space-lg);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -173,8 +173,18 @@ a:hover {
 }
 
 .nav-links {
-  display: flex;
+  display: none; /* hidden on mobile */
   gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .nav-container {
+    justify-content: space-between; /* restore split layout on desktop */
+  }
+
+  .nav-links {
+    display: flex;
+  }
 }
 
 .nav-links a {
